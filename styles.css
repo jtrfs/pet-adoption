@@ -1,4 +1,28 @@
-.top-section {
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.top-section-wrapper {
   background-color: #001d37;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.top-section {
+  margin: 0 auto;
+  padding-top: 139px;
+  padding-bottom: 139px;
+  color: #fff;
+  max-width: 1066px;
+}
+
+.our-btn {
+  padding: 14px 40px;
+  text-decoration: none;
+  border-radius: 500px;
+  background-color: #475aff;
   color: #fff;
 }
