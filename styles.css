@@ -13,14 +13,21 @@ body {
   background-color: #001d37;
   padding-left: 16px;
   padding-right: 16px;
+  overflow: hidden;
 }
 
 .top-section {
+  position: relative;
   margin: 0 auto;
   padding-top: 139px;
   padding-bottom: 139px;
   color: #fff;
   max-width: 1066px;
+}
+
+.actual-top-section {
+  position: relative;
+  z-index: 100;
 }
 
 .top-section h1 {
@@ -86,4 +93,64 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+}
+
+.circle-violet {
+  position: absolute;
+  top: 62px;
+  right: -392px;
+  width: 617px;
+  height: 617px;
+  background: #d660ff;
+  opacity: 0.85;
+  border-radius: 50%;
+  filter: blur(150px);
+}
+
+.circle-blue {
+  position: absolute;
+  top: -360px;
+  left: -121px;
+  width: 617px;
+  height: 617px;
+  background: #6079ff;
+  border-radius: 50%;
+  filter: blur(150px);
+}
+
+.page-section {
+  background-color: #fff;
+  padding: 130px 16px;
+}
+
+.page-section-inner {
+  max-width: 1066px;
+  margin: 0 auto;
+}
+
+.page-section-title {
+  margin: 0;
+  font-size: 5.31rem;
+  line-height: 1;
+}
+
+.pet-filter {
+  color: #9f9f9f;
+  font-size: 1.375rem;
+}
+
+.pet-filter button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.375rem;
+  color: #9f9f9f;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.site-footer p {
+  padding: 0 0 65px 0;
+  margin: 0;
+  color: #a6a6a6;
+  font-size: 0.875rem;
+  text-align: center;
 }
