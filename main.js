@@ -26,6 +26,7 @@ const petsArea = async function () {
     clone.querySelector('.pet-name').textContent = pet.name;
     clone.querySelector('.pet-description').textContent = pet.description;
     clone.querySelector('.pet-age').textContent = calculateAge(pet.birthYear);
+    if (!pet.photo) pet.photo = 'images/fallback.jpg';
     clone.querySelector('.pet-card-photo img').src = pet.photo;
     clone.querySelector('.pet-card-photo img').alt = `This is a ${pet.species}`;
     console.log(pet.photo);
