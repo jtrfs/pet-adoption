@@ -21,15 +21,17 @@ const petsArea = async function () {
   const petsPromise = await fetch(petsUrl);
   const petsData = await petsPromise.json();
   console.log('pets data from petsArea():', petsData);
-  petsData.forEach(pet => {
+  petsData.forEach(({name, species, birthYear, description, photo}) => {
     const clone = template.content.cloneNode(true);
-    clone.querySelector('.pet-name').textContent = pet.name;
-    clone.querySelector('.pet-description').textContent = pet.description;
-    clone.querySelector('.pet-age').textContent = calculateAge(pet.birthYear);
-    if (!pet.photo) pet.photo = 'images/fallback.jpg';
-    clone.querySelector('.pet-card-photo img').src = pet.photo;
-    clone.querySelector('.pet-card-photo img').alt = `This is a ${pet.species}`;
-    console.log(pet.photo);
+    clone.querySelector('.pet-card').dataset.species = species;
+    clone.querySelector('.pet-name').textContent = name;
+    clone.querySelector('.pet-description').textContent = description;
+    clone.querySelector('.pet-age').textContent = calculateAge(birthYear);
+    if (!photo)
+      photo = species === 'dog' ? '/images/fallback-dog.jpeg' : '/images/fallback-cat.jpeg';
+    clone.querySelector('.pet-card-photo img').src = photo;
+    clone.querySelector('.pet-card-photo img').alt = `This is a ${species} named ${name}`;
+    console.log(photo);
 
     wrapper.appendChild(clone);
   });
@@ -58,4 +60,13 @@ function handleButtonClick(e) {
   // add active class to the specific button that just got clicked
   e.target.classList.add('active');
   // actually filter the pets down below
+  const currentFilter = e.target.dataset.filter;
+  const petCardsAll = document.querySelectorAll('.pet-card');
+  petCardsAll.forEach(card => {
+    if (currentFilter === card.dataset.species || currentFilter === 'all') {
+      card.style.display = 'grid';
+    } else {
+      card.style.display = 'none';
+    }
+  });
 }
