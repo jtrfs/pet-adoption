@@ -167,6 +167,16 @@ body {
   font-size: 1.15rem;
   color: #9f9f9f;
   font-family: 'Source Sans 3', sans-serif;
+  cursor: pointer;
+}
+
+.pet-filter .active {
+  color: #475aff;
+  text-decoration: underline;
+}
+
+button:not(.active):hover {
+  color: #7d7d7d;
 }
 
 .site-footer p {
