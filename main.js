@@ -45,3 +45,17 @@ function calculateAge(birthYear) {
   else if (age === 1) return `${age} year old`;
   return `${age} years old`;
 }
+
+// pet filter button code
+const petButtons = document.querySelectorAll('.pet-filter button');
+petButtons.forEach(btn => {
+  btn.addEventListener('click', handleButtonClick);
+});
+
+function handleButtonClick(e) {
+  // remove active class from any and all buttons
+  petButtons.forEach(btn => btn.classList.remove('active'));
+  // add active class to the specific button that just got clicked
+  e.target.classList.add('active');
+  // actually filter the pets down below
+}
