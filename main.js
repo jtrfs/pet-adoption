@@ -1,5 +1,6 @@
 const weatherUrl = 'https://api.weather.gov/gridpoints/MFL/110,50/forecast';
-const petsUrl = 'https://learnwebcode.github.io/bootcamp-pet-data/pets.json';
+// const petsUrl = 'https://learnwebcode.github.io/bootcamp-pet-data/pets.json';
+const petsUrl = 'https://pet-adoption-centre.netlify.app/.netlify/functions/pets';
 const temp = document.querySelector('.temp');
 
 const template = document.querySelector('#pet-card-template');
